@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Profile extends Model
 {
     //
-    public static $box = array(
+    public static $rules = array(
         'name'=>'required',
         'gender'=>'required',
         'hobby'=>'required',

@@ -28,14 +28,14 @@
                         <label class="col-md-2"　for="gender">性別</label>
                         <div class="col-md-10">
                             @if (old('gender') == 'male' )
-                            <input type="ratio" name="gender" value="male" checeked="checked"> 男性{{ old('gender') }}
-                            <input type="ratio" name="gender" value="female">女性{{ old('gender') }}
+                            <input type="radio" name="gender" value="male" checeked="checked"> 男性{{ old('gender') }}
+                            <input type="radio" name="gender" value="female">女性{{ old('gender') }}
                              @elseif (old('gender') == 'female')
-                             <input type="ratio" name="gender" value="male" > 男性{{ old('gender') }}
-                             <input type="ratio" name="gender" value="female" checeked="checked">女性{{ old('gender') }}
+                             <input type="radio" name="gender" value="male" > 男性{{ old('gender') }}
+                             <input type="radio" name="gender" value="female" checeked="checked">女性{{ old('gender') }}
                              @else
-                             <input type="ratio" name="gender" value="male" > 男性{{ old('gender') }}
-                              <input type="ratio" name="gender" value="female">女性{{ old('gender') }}
+                             <input type="radio" name="gender" value="male" > 男性{{ old('gender') }}
+                              <input type="radio" name="gender" value="female">女性{{ old('gender') }}
                               @endif
                         </div>
                     </div>
