@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Profile;
+use App\Profilehistory;
+use Carbon\Carbon;
 
 class ProfileController extends Controller
 {
@@ -54,6 +56,10 @@ public function create(Request $request)
           
         return view('admin.profile.edit',['profile_form'=>
     $profile]);
+    
+     $profile_form->gender == "female" ? 'checked="checked"' : '';
+    
+   
     }
 
 public function update(Request $request)
@@ -66,15 +72,16 @@ public function update(Request $request)
       
       
       unset($profile_form['_token']);
+      unset($profile_form['image']);
        unset($profile_form['remove']);
       
       $profile->fill($profile_form)->save();
       
-      $Profile_history = new ProfileHistories;
+      $profile_history = new Profilehistory;
         var_dump($profile->id);
-        $Profile_history->profile_id = $profile->id;
-        $Profile_history->edited_at = Carbon::now();
-        $Profile_history->save();
+        $profile_history->profile_id = $profile->id;
+        $profile_history->edited_at = Carbon::now();
+        $profile_history->save();
         
         return redirect('admin/profile');
     }
