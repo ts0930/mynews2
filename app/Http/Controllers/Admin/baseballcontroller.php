@@ -12,4 +12,11 @@ class baseballcontroller extends Controller
     return view('admin.baseball.giants');
     }
 
+    
+    public function create(Request $request)
+    {
+     $this->validate($request, News::$rules);
+     $baseball=new Baseball;
+     $form = $request->all();
+}
 }

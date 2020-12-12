@@ -20,7 +20,6 @@ Route::group(['prefix' => 'admin'],function(){
     Route::get('news/create','Admin\NewsController@add')->middleware("auth");
     Route::get('profile/create','Admin\ProfileController@add')->middleware('auth');
     Route::get('profile/edit','Admin\ProfileController@edit')->middleware('auth');
-    Route::get('baseball/giants','Admin\baseballcontroller@add');
 });
 
 Route::get('XXX','AAAController@bbb');
@@ -55,3 +54,12 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('news/edit', 'Admin\NewsController@update')->middleware('auth');
      Route::get('news/delete', 'Admin\NewsController@delete')->middleware('auth');
 });
+
+
+Route::group(['prefix' => 'admin'],function(){
+ Route::get('baseball/giants','Admin\baseballcontroller@add');
+ Route::post('baseball/giants','Admin\baseballcontroller@create');
+});
+
+
+Route::get('/folders/{id}/tasks','TaskController@index')->name('tasks.index');

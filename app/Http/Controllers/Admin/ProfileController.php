@@ -70,11 +70,11 @@ public function update(Request $request)
       
       $profile->fill($profile_form)->save();
       
-      $profile_history = new ProfileHistories;
+      $Profile_history = new ProfileHistories;
         var_dump($profile->id);
-        $profile_history->profile_id = $profile->id;
-        $profile_history->edited_at = Carbon::now();
-        $profile_history->save();
+        $Profile_history->profile_id = $profile->id;
+        $Profile_history->edited_at = Carbon::now();
+        $Profile_history->save();
         
         return redirect('admin/profile');
     }

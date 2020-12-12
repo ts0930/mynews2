@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.admin')
+@section('title', '野球情報作成')
 
-        <title>Baseball laver</title>
-    </head>
-    <body>
-        <h1>野球　最高！</h1>
-    </body>
-</html>
+@section('contents')
+        <div class="container">
+            <div class row>
+                <div class="col-md-8 mx-auto">
+                    <h2>野球調査</h2>
+                   <form action="{{ action('Adnin\baseballcontroller@update')}}" method="post"enctype="multipart/form-data">
+                       
+                   </form>
+                </div>
+                    
+            </div>
+        </div>
