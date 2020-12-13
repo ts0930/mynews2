@@ -81,12 +81,12 @@ public function update(Request $request)
       unset($profile_form['remove']);
       $profile->fill($profile_form)->save();
       
-      $history = new Profilehistory;
-        $history->profile_id = $profile->id;
-        $history->edited_at = Carbon::now();
-        $history->save();
+      $profile_history = new Profilehistory;
+        $profile_history->profile_id = $profile->id;
+        $profile_history->edited_at = Carbon::now();
+        $profile_history->save();
         
-        return redirect('admin/profile');
+        return redirect('admin/profile/');
     }
     
     public function delete(Request $request)
