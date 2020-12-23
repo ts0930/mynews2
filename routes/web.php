@@ -63,3 +63,7 @@ Route::group(['prefix' => 'admin'],function(){
 
 
 Route::get('/folders/{id}/tasks','TaskController@index')->name('tasks.index');
+
+Route::get('/', 'NewsController@index');
+
+Route::get('/profile', 'ProfileController@index');

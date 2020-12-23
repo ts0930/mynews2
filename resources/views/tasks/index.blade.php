@@ -35,7 +35,7 @@
         </nav>
       </div>
       <div class="column col-md-8">
-        <!-- ここにタスク -->
+        
       </div>
     </div>
   </div>
